@@ -19,5 +19,4 @@ app.get('/', function (req, res) {
 app.listen(process.env.PORT || 3000, function (err) {
     if (err) throw err;
     console.log("Magic happens on port 3000...");
-    console.log(process.env.PORT);
 });
