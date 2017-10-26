@@ -236,6 +236,30 @@
     </div>
     <!-- //nav -->
 
+    <!-- banner -->
+    <div id="slidey" style="display:none;">
+        <ul>
+            <li><img src="images/5.jpg" alt=" "><p class='title'>Battlefield 3</p><p class='description'>Battlefield 3 is a first-person shooter video game developed by EA DICE and published by Electronic Arts.</p></li>
+            <li><img src="images/2.jpg" alt=" "><p class='title'>Fallout Shelter</p><p class='description'>A fallout shelter is an enclosed space specially designed to protect occupants from radioactive debris or fallout resulting from a nuclear explosion.</p></li>
+            <li><img src="images/3.jpg" alt=" "><p class='title'>Warhammer</p><p class='description'>Age of Sigmar (AoS) is a tabletop wargame released by Games Workshop in 2015. It replaced Warhammer Fantasy Battle.</p></li>
+            <li><img src="images/4.jpg" alt=" "><p class='title'>Battlebards</p><p class='description'>A grassroots initiative started 4 years ago with our small group of gamers originally called The Orange County Gaming Group (OCGG).</p></li>
+            <li><img src="images/6.jpg" alt=" "><p class='title'>Non-Stop Chuck Norris</p><p class='description'>Nonstop Chuck Norris is easy to get the hang of but can be tricky to conquer.</p></li>
+            <li><img src="images/7.jpg" alt=" "><p class='title'>Asterix & Friends</p><p class='description'>Build your own Gaulish village with Asterix, Obelix, Dogmatix, and other new and classic characters.</p></li>
+        </ul>
+    </div>
+    <script src="js/jquery.slidey.js"></script>
+    <script src="js/jquery.dotdotdot.min.js"></script>
+    <script type="text/javascript">
+        $("#slidey").slidey({
+            interval: 8000,
+            listCount: 5,
+            autoplay: false,
+            showList: true
+        });
+        $(".slidey-list-description").dotdotdot();
+    </script>
+    <!-- //banner -->
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script>
@@ -252,8 +276,9 @@
             );
         });
     </script>
+
     <!-- //Bootstrap Core JavaScript -->
-    <!-- here stars scrolling icon -->
+    <!-- here starts scrolling icon -->
     <script type="text/javascript">
         $(document).ready(function() {
             /*
