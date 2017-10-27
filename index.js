@@ -16,6 +16,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', function (req, res) {
     const sql = "SELECT * FROM games_master;";
     conn.query(sql, function (err, games) {
+        for(var i = 0; i < games.length; i++){
+            console.log(games[i].title);
+        }
         res.render('index', {games: games});
         conn.end();
     });
