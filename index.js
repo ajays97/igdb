@@ -14,7 +14,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', function (req, res) {
-    res.render('index');
+    const sql = "SELECT * FROM games_master;";
+    conn.query(sql, function (err, games) {
+        console.log(games[1].developers);
+        console.log(games[1].image_url);
+        res.render('index', {games: games});
+    });
+
 });
 
 app.listen(process.env.PORT || 3000, function (err) {
