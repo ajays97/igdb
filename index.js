@@ -15,9 +15,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', function (req, res) {
     const sql = "SELECT * FROM games_master;";
-    conn.query(sql, function (err, games) {
-        for(var i = 0; i < games.length; i++){
-            console.log(games[i].title);
+    conn.query(sql, function (err, results, fields) {
+        var games = [];
+        for(var i = 0; i < results.length; i++){
+            games.push({
+                title: results[i].title,
+                image_url: results[i].image_url,
+            });
         }
         res.render('index', {games: games});
         conn.end();
