@@ -8,7 +8,6 @@ var conn = mysql.createConnection({
 });
 
 conn.connect(function (err) {
-    if (err) throw err;
     console.log('The Cloud RDS is amazing...');
 });
 
