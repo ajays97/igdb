@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+var mysql = require('mysql');
 
 var conn = mysql.createConnection({
     host: "igdb.ctk3p7qef1xl.us-east-1.rds.amazonaws.com",

@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-const conn = require('./dbconnect');
+var conn = require('./dbconnect');
 const url = require('url');
 
 var app = express();
@@ -17,8 +17,8 @@ app.get('/', function (req, res) {
     const sql = "SELECT * FROM games_master;";
     conn.query(sql, function (err, games, fields) {
         if (err) throw err;
+        console.log(games[0].title);
         res.render('index', {games: games});
-        conn.end();
     });
 
 });
