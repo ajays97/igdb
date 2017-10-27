@@ -20,8 +20,18 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            <state relative-caret-position="146">
+              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbconnect.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbconnect.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -176,12 +186,12 @@
       <workItem from="1508977677054" duration="2374000" />
       <workItem from="1508997886961" duration="3206000" />
       <workItem from="1509066771307" duration="600000" />
-      <workItem from="1509103423843" duration="6186000" />
+      <workItem from="1509103423843" duration="6413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19199000" />
+    <option name="totallyTimeSpent" value="19426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -375,14 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbconnect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/logo.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -473,14 +475,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/carousel-item.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -489,10 +483,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/carousel-item.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbconnect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="146">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding />
         </state>
       </provider>
