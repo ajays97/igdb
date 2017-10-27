@@ -4,7 +4,8 @@ var conn = mysql.createConnection({
     host: "igdb.ctk3p7qef1xl.us-east-1.rds.amazonaws.com",
     user: "ajays",
     password: "ajays1997",
-    database: "igdb"
+    database: "igdb",
+    timeout: 60000
 });
 
 conn.connect(function (err) {
