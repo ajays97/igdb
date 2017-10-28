@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IGDb - Games, Reviews and More| Home :: IDGb</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/contactstyle.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/faqstyle.css" type="text/css" media="all" />
+    <link href="css/single.css" rel='stylesheet' type='text/css' />
+    <link href="css/medile.css" rel='stylesheet' type='text/css' />
+    <!-- banner-slider -->
+    <link href="css/jquery.slidey.min.css" rel="stylesheet">
+    <!-- //banner-slider -->
+    <!-- pop-up -->
+    <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //pop-up -->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- banner-bottom-plugin -->
+    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#owl-demo").owlCarousel({
+
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                items : 5,
+                itemsDesktop : [640,4],
+                itemsDesktopSmall : [414,3]
+
+            });
+
+        });
+    </script>
+    <!-- //banner-bottom-plugin -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- header -->
+        {{> header}}
+    <!-- //header -->
+
+    <!-- bootstrap-pop-up -->
+        {{> bootstrap-popup}}
+    <!-- //bootstrap-pop-up -->
+
+    <!-- nav -->
+        {{> nav}}
+    <!-- //nav -->
+
+    <!-- banner -->
+    <div id="slidey" style="display:none;">
+        <ul>
+            <li><img src="images/home_carousel/carousel.jpg" alt=" "><p class='title'>Battlefield 3</p><p class='description'>Battlefield 3 is a first-person shooter video game developed by EA DICE and published by Electronic Arts.</p></li>
+            <li><img src="images/home_carousel/carousel1.jpg" alt=" "><p class='title'>Fallout Shelter</p><p class='description'>A fallout shelter is an enclosed space specially designed to protect occupants from radioactive debris or fallout resulting from a nuclear explosion.</p></li>
+            <li><img src="images/home_carousel/carousel2.jpg" alt=" "><p class='title'>Warhammer</p><p class='description'>Age of Sigmar (AoS) is a tabletop wargame released by Games Workshop in 2015. It replaced Warhammer Fantasy Battle.</p></li>
+            <li><img src="images/home_carousel/carousel3.jpg" alt=" "><p class='title'>Battlebards</p><p class='description'>A grassroots initiative started 4 years ago with our small group of gamers originally called The Orange County Gaming Group (OCGG).</p></li>
+            <li><img src="images/home_carousel/carousel5.jpg" alt=" "><p class='title'>Non-Stop Chuck Norris</p><p class='description'>Nonstop Chuck Norris is easy to get the hang of but can be tricky to conquer.</p></li>
+            <li><img src="images/home_carousel/carousel6.jpg" alt=" "><p class='title'>Asterix & Friends</p><p class='description'>Build your own Gaulish village with Asterix, Obelix, Dogmatix, and other new and classic characters.</p></li>
+        </ul>
+    </div>
+    <script src="js/jquery.slidey.js"></script>
+    <script src="js/jquery.dotdotdot.min.js"></script>
+    <script type="text/javascript">
+        $("#slidey").slidey({
+            interval: 8000,
+            listCount: 5,
+            autoplay: false,
+            showList: true
+        });
+        $(".slidey-list-description").dotdotdot();
+    </script>
+    <!-- //banner -->
+
+    <!-- banner-bottom -->
+    <h4 class="latest-text w3_latest_text" style="margin-top: 1em">What's New</h4>
+    <div class="banner-bottom">
+        <div class="container">
+            <div class="w3_agile_banner_bottom_grid">
+                <div id="owl-demo" class="owl-carousel owl-theme">
+
+                    {{#each games}}
+                        {{> carousel-item}}
+                    {{/each}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //banner-bottom -->
+
+    <!-- general -->
+    <div class="general">
+        <h4 class="latest-text w3_latest_text">Featured</h4>
+        <div class="container">
+            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Featured</a></li>
+                    <li role="presentation"><a href="#rating" id="rating-tab" role="tab" data-toggle="tab" aria-controls="rating" aria-expanded="true">Top Rated</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+
+                        {{#each featured}}
+                            {{> featured-item}}
+                        {{/each}}
+
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="rating" aria-labelledby="rating-tab">
+
+                        {{#each rated}}
+                            {{> featured-item}}
+                        {{/each}}
+
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //general -->
+
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".dropdown").hover(
+                    function() {
+                        $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+                        $(this).toggleClass('open');
+                    },
+                    function() {
+                        $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+                        $(this).toggleClass('open');
+                    }
+            );
+        });
+    </script>
+
+
+    <!-- footer -->
+        {{> footer}}
+    <!-- //footer -->
+
+    <!-- //Bootstrap Core JavaScript -->
+    <!-- here starts scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+</body>
+</html>

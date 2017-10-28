@@ -24,7 +24,7 @@ Handlebars.registerHelper('getDate', function (dateString) {
 });
 
 app.get('/', function (req, res) {
-    const sql = "SELECT title, release_date, gid, rating, image_url FROM games_master ORDER BY release_date DESC LIMIT 8;";
+    const sql = "SELECT title, release_date, gid, image_url FROM games_master ORDER BY release_date DESC LIMIT 8;";
     conn.query(sql, function (err, games, fields) {
         if (err) throw err;
         const sql2 = "SELECT title, release_date, gid, image_url FROM games_master ORDER BY rating DESC LIMIT 6;";
@@ -38,14 +38,6 @@ app.get('/gameinfo/:gid', function (req, res) {
     const sql = "SELECT games_master.title, games_master.description, games_master.rating, games_master.developers, games_master.release_date, trailers.video_url FROM games_master, trailers WHERE games_master.gid= "+req.params.gid+" AND trailers.gid= "+req.params.gid+";";
     conn.query(sql, function (err, results) {
         res.render('game-info', results[0]);
-    });
-});
-
-app.post('/subscribe', function (req, res) {
-    var email = req.body.email;
-    const sql = "INSERT INTO subscribers SET ?";
-    conn.query(sql, {sid: null, email: email}, function (err, results) {
-        res.redirect('back');
     });
 });
 
