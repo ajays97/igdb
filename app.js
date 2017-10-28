@@ -41,7 +41,7 @@ app.get('/gameinfo/:gid', function (req, res) {
     });
 });
 
-app.listen(process.env.PORT || 3000, function (err) {
+app.listen(process.env.PORT || 80, function (err) {
     if (err) throw err;
-    console.log("Magic happens on port 3000...");
+    console.log("Magic happens on port 80...");
 });
