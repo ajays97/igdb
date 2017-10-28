@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55aea698-a202-486e-a810-b58448d324cd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/bootstrap-popup.hbs" afterPath="$PROJECT_DIR$/views/partials/bootstrap-popup.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/header.hbs" afterPath="$PROJECT_DIR$/views/partials/header.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -226,12 +223,12 @@
       <workItem from="1509126868344" duration="489000" />
       <workItem from="1509157569938" duration="14001000" />
       <workItem from="1509179022369" duration="6312000" />
-      <workItem from="1509190322255" duration="13254000" />
+      <workItem from="1509190322255" duration="13849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60008000" />
+    <option name="totallyTimeSpent" value="60603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
