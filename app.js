@@ -23,8 +23,10 @@ app.get('/', function (req, res) {
     const sql = "SELECT title, release_date, image_url FROM games_master ORDER BY release_date DESC LIMIT 8;";
     conn.query(sql, function (err, games, fields) {
         if (err) throw err;
-        rated = games;
-        res.render('index', {games: games, featured: games.slice(0,6), rated: _.sortBy(rated, 'rating', 'desc'), recents: games.slice(0,5)});
+        const sql2 = "SELECT title, release_date, image_url FROM games_master ORDER BY rating DESC LIMIT 6;";
+        conn.query(sql2, function (err, rated, fields) {
+            res.render('index', {games: games, featured: games.slice(0,6), rated: rated});
+        });
     });
 
 });
