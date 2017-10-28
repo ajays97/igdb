@@ -51,7 +51,11 @@ passport.use(new LocalStrategy({
             if (results.length === 0) {
                 done(null, false);
             }
-            return done(null, 'aaasda');
+
+            if (results[0].passwrd === password)
+                return done(null, 'aaasda');
+            else
+                return done(null, false);
 
         });
 
