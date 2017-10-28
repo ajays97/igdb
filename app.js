@@ -47,9 +47,7 @@ passport.use(new LocalStrategy({
     passwordField: 'password'
     }, function(email, password, done) {
         const sql = "SELECT username, passwrd from users WHERE email = '" + email + "';";
-        console.log(sql);
         conn.query(sql, function (err, results, fields) {
-            console.log(results);
 
             if (err) {done(err)}
 
@@ -76,8 +74,8 @@ Handlebars.registerHelper('getDate', function (dateString) {
 });
 
 app.get('/', function (req, res) {
-    console.log(req.user);
-    console.log(req.isAuthenticated());
+    // console.log(req.user);
+    // console.log(req.isAuthenticated());
     const sql = "SELECT title, release_date, gid, rating, image_url FROM games_master ORDER BY release_date DESC LIMIT 8;";
     conn.query(sql, function (err, games, fields) {
         if (err) throw err;
@@ -95,16 +93,7 @@ app.get('/login', function (req, res) {
 app.get('/gameinfo/:gid', function (req, res) {
     const sql = "SELECT requirements.ram, requirements.processor, requirements.gpu, requirements.os, requirements.space, games_master.title, games_master.description, games_master.rating, games_master.developers, games_master.release_date, trailers.video_url FROM games_master, trailers, requirements WHERE games_master.gid= "+req.params.gid+" AND trailers.gid= "+req.params.gid+" AND requirements.gid= "+req.params.gid+";";
     conn.query(sql, function (err, results) {
-        console.log(results[0]);
         res.render('game-info', results[0]);
-    });
-});
-
-app.post('/subscribe', function (req, res) {
-    var email = req.body.email;
-    const sql = "INSERT INTO subscribers SET ?";
-    conn.query(sql, {sid: null, email: email}, function (err, results) {
-        res.redirect('back');
     });
 });
 
@@ -116,6 +105,22 @@ app.get('/logout', function (req, res) {
     req.logout();
     req.session.destroy();
     res.redirect('/');
+});
+
+app.post('/search', function (req, res) {
+    const sql = "SELECT * FROM games_master where MATCH(title) AGAINST('" + req.body.search + "');";
+    conn.query(sql, function (err, results){
+        if (err) throw err;
+        res.render('search', {games: results, search: req.body.search});
+    });
+});
+
+app.post('/subscribe', function (req, res) {
+    var email = req.body.email;
+    const sql = "INSERT INTO subscribers SET ?";
+    conn.query(sql, {sid: null, email: email}, function (err, results) {
+        res.redirect('back');
+    });
 });
 
 app.post('/login', passport.authenticate('local', {
