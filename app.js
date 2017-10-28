@@ -35,8 +35,9 @@ app.get('/', function (req, res) {
 });
 
 app.get('/gameinfo/:gid', function (req, res) {
-    const sql = "SELECT games_master.title, games_master.description, games_master.rating, games_master.developers, games_master.release_date, trailers.video_url FROM games_master, trailers WHERE games_master.gid= "+req.params.gid+" AND trailers.gid= "+req.params.gid+";";
+    const sql = "SELECT requirements.ram, requirements.processor, requirements.gpu, requirements.os, requirements.space, games_master.title, games_master.description, games_master.rating, games_master.developers, games_master.release_date, trailers.video_url FROM games_master, trailers, requirements WHERE games_master.gid= "+req.params.gid+" AND trailers.gid= "+req.params.gid+" AND requirements.gid= "+req.params.gid+";";
     conn.query(sql, function (err, results) {
+        console.log(results[0]);
         res.render('game-info', results[0]);
     });
 });
