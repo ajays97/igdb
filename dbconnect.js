@@ -5,6 +5,7 @@ var conn = mysql.createConnection({
     user: "ajays",
     password: "ajays1997",
     database: "igdb",
+    multipleStatements: true
 });
 
 conn.connect(function (err) {

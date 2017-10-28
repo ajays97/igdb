@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('express-handlebars');
 const Handlebars = require('handlebars');
 const bodyParser = require('body-parser');
+const _ = require('lodash');
 var conn = require('./dbconnect');
 const url = require('url');
 
@@ -22,7 +23,8 @@ app.get('/', function (req, res) {
     const sql = "SELECT title, release_date, image_url FROM games_master ORDER BY release_date DESC LIMIT 8;";
     conn.query(sql, function (err, games, fields) {
         if (err) throw err;
-        res.render('index', {games: games});
+        rated = games;
+        res.render('index', {games: games, featured: games.slice(0,6), rated: _.sortBy(rated, 'rating', 'desc'), recents: games.slice(0,5)});
     });
 
 });
