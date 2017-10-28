@@ -5,7 +5,6 @@ var conn = mysql.createConnection({
     user: "ajays",
     password: "ajays1997",
     database: "igdb",
-    timeout: 60000
 });
 
 conn.connect(function (err) {
