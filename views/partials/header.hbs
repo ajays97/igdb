@@ -10,10 +10,17 @@
             </form>
         </div>
         <div class="w3l_sign_in_register">
-            <ul>
-                <li><i class="fa fa-phone" aria-hidden="true"></i> (+91) 123 456 789</li>
-                <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
-            </ul>
+            {{#if isAuthenticated}}
+                <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> (+91) 123 456 789</li>
+                    <li><a href="/logout">LogOut</a></li>
+                </ul>
+            {{else}}
+                <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> (+91) 123 456 789</li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">Log In</a></li>
+                </ul>
+            {{/if}}
         </div>
         <div class="clearfix"> </div>
     </div>

@@ -28,6 +28,7 @@ var options = {
 
 var sessionStore = new MySQLStore(options);
 
+
 app.use(session({
     secret: 'igdb2017',
     resave: false,
@@ -36,6 +37,10 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function (req, res, next) {
+    res.locals.isAuthenticated = req.isAuthenticated();
+    next();
+});
 
 passport.use(new LocalStrategy({
     usernameField: 'email',
@@ -53,7 +58,7 @@ passport.use(new LocalStrategy({
             }
 
             if (results[0].passwrd === password)
-                return done(null, 'aaasda');
+                return done(null, {email: email, username: results[0].username});
             else
                 return done(null, false);
 
@@ -105,6 +110,12 @@ app.post('/subscribe', function (req, res) {
 
 app.get('/review', authenticationMiddleware(), function (req, res) {
     res.send('<h1>Congratulations!</h1>');
+});
+
+app.get('/logout', function (req, res) {
+    req.logout();
+    req.session.destroy();
+    res.redirect('/');
 });
 
 app.post('/login', passport.authenticate('local', {
