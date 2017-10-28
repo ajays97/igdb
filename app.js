@@ -20,13 +20,23 @@ Handlebars.registerHelper('getYear', function (dateString) {
 });
 
 app.get('/', function (req, res) {
-    const sql = "SELECT title, release_date, image_url FROM games_master ORDER BY release_date DESC LIMIT 8;";
+    const sql = "SELECT title, release_date, gid, image_url FROM games_master ORDER BY release_date DESC LIMIT 8;";
     conn.query(sql, function (err, games, fields) {
         if (err) throw err;
-        const sql2 = "SELECT title, release_date, image_url FROM games_master ORDER BY rating DESC LIMIT 6;";
+        const sql2 = "SELECT title, release_date, gid, image_url FROM games_master ORDER BY rating DESC LIMIT 6;";
         conn.query(sql2, function (err, rated, fields) {
             res.render('index', {games: games, featured: games.slice(0,6), rated: rated});
         });
+    });
+});
+
+app.get('/gameinfo/:gid', function (req, res) {
+    console.log(req.params.gid);
+    const sql = "SELECT games_master.title, games_master.description, games_master.developers, games_master.release_date, trailers.video_url FROM games_master, trailers WHERE games_master.gid= "+req.params.gid+" AND trailers.gid= "+req.params.gid+";";
+    console.log(sql);
+    conn.query(sql, function (err, results) {
+        console.log(results[0]);
+        res.render('game-info', results[0]);
     });
 
 });
