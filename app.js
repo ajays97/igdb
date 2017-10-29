@@ -20,7 +20,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 var options = require('./session');
-console.log(options);
 
 var sessionStore = new MySQLStore(options);
 
