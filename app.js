@@ -4,6 +4,7 @@ const Handlebars = require('handlebars');
 const bodyParser = require('body-parser');
 const url = require('url');
 const _ = require('lodash');
+const moment = require('moment');
 var conn = require('./dbconnect');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -130,7 +131,7 @@ app.get('/developers/:developers', function (req, res) {
 });
 
 app.post('/review', authenticationMiddleware(), function (req, res) {
-    var review = {gid: req.body.gid, username: req.body.username, email: req.body.email, review: req.body.review, created_at: new Date().now};
+    var review = {gid: req.body.gid, username: req.body.username, email: req.body.email, review: req.body.review, created_at: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss')};
     const sql = "INSERT INTO reviews SET ?";
     conn.query(sql, review, function (err, results, fields) {
         res.redirect(req.header('referer'));
