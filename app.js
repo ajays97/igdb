@@ -19,12 +19,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-var options = {
-    host: "igdb.ctk3p7qef1xl.us-east-1.rds.amazonaws.com",
-    user: "ajays",
-    password: "ajays1997",
-    database: "igdb_sessions"
-};
+var options = require('./session');
+console.log(options);
 
 var sessionStore = new MySQLStore(options);
 
