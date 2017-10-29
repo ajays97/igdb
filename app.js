@@ -90,14 +90,13 @@ app.get('/login', function (req, res) {
 });
 
 app.get('/gameinfo/:gid', function (req, res) {
-    const sql = "SELECT requirements.ram, requirements.processor, requirements.gpu, requirements.os, requirements.space, games_master.title, games_master.description, games_master.rating, games_master.developers, games_master.release_date, trailers.video_url FROM games_master, trailers, requirements WHERE games_master.gid= "+req.params.gid+" AND trailers.gid= "+req.params.gid+" AND requirements.gid= "+req.params.gid+";";
+    const sql = "SELECT requirements.ram, requirements.processor, requirements.gpu, requirements.os, requirements.space, games_master.gid, games_master.title, games_master.description, games_master.rating, games_master.developers, games_master.release_date, trailers.video_url FROM games_master, trailers, requirements WHERE games_master.gid= "+req.params.gid+" AND trailers.gid= "+req.params.gid+" AND requirements.gid= "+req.params.gid+";";
     conn.query(sql, function (err, results) {
-        res.render('game-info', results[0]);
+        const sql2 = "SELECT username, review, created_at FROM reviews WHERE gid = "+req.params.gid+";";
+        conn.query(sql2, function (err, results2) {
+            res.render('game-info', {gameinfo: results[0], reviews: results2});
+        });
     });
-});
-
-app.get('/review', authenticationMiddleware(), function (req, res) {
-    res.send('<h1>Congratulations!</h1>');
 });
 
 app.get('/logout', function (req, res) {
@@ -131,9 +130,11 @@ app.get('/developers/:developers', function (req, res) {
 });
 
 app.post('/review', authenticationMiddleware(), function (req, res) {
-    var review = {username: req.body.username, email: req.body.email, review: req.body.review, created_at: new Date().getTime()};
-    console.log(review);
-    res.redirect(req.header('referer'));
+    var review = {gid: req.body.gid, username: req.body.username, email: req.body.email, review: req.body.review, created_at: new Date().now};
+    const sql = "INSERT INTO reviews SET ?";
+    conn.query(sql, review, function (err, results, fields) {
+        res.redirect(req.header('referer'));
+    });
 });
 
 app.post('/subscribe', function (req, res) {

@@ -100,7 +100,7 @@
             <div class="agileits-single-top">
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
-                    <li class="active">Game Info / {{title}}</li>
+                    <li class="active">Game Info / {{gameinfo.title}}</li>
                 </ol>
             </div>
             <div class="single-page-agile-info">
@@ -109,10 +109,10 @@
                     <div class="col-sm-8 single-left">
                         <div class="song">
                             <div class="song-info">
-                                <h3>{{title}}</h3>
+                                <h3>{{gameinfo.title}}</h3>
                             </div>
 
-                            <iframe src="https://www.youtube.com/embed/{{video_url}}" frameborder="0" width="760" height="430"></iframe>
+                            <iframe src="https://www.youtube.com/embed/{{gameinfo.video_url}}" frameborder="0" width="760" height="430"></iframe>
 
                         </div>
                         <div class="song-grid-right">
@@ -162,19 +162,19 @@
                             <div class="">
                                 <h3><a><strong>Game Info:-</strong></a></h3>
                                 <hr>
-                                <h4><a><strong>Title: </strong><span>{{title}}</span></a></h4> <br>
-                                <h4><a><strong>Description:-<br></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{description}}</span></a></h4> <br>
-                                <h4><a><strong>Developed By: </strong><span>{{developers}}</span></a></h4> <br>
-                                <h4><a><strong>Release Date: </strong><span>{{getDate release_date}}</span></a></h4> <br>
-                                <h4><a><strong>IGDb Rating: </strong><span>{{rating}}/5</span></a></h4>
+                                <h4><a><strong>Title: </strong><span>{{gameinfo.title}}</span></a></h4> <br>
+                                <h4><a><strong>Description:-<br></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{gameinfo.description}}</span></a></h4> <br>
+                                <h4><a><strong>Developed By: </strong><span>{{gameinfo.developers}}</span></a></h4> <br>
+                                <h4><a><strong>Release Date: </strong><span>{{getYear gameinfo.release_date}}</span></a></h4> <br>
+                                <h4><a><strong>IGDb Rating: </strong><span>{{gameinfo.rating}}/5</span></a></h4>
                                 <hr>
                                 <h3><a><strong>Minimum System Requirements:-</strong></a></h3>
                                 <hr>
-                                <h4><a><strong>Operating System: </strong><span>{{os}}</span></a></h4> <br>
-                                <h4><a><strong>Processor: </strong><span>{{processor}}</span></a></h4> <br>
-                                <h4><a><strong>Graphics Card: </strong><span>{{gpu}}</span></a></h4> <br>
-                                <h4><a><strong>RAM: </strong><span>{{ram}} GB</span></a></h4> <br>
-                                <h4><a><strong>Storage Space: </strong><span>{{space}}</span></a></h4>
+                                <h4><a><strong>Operating System: </strong><span>{{gameinfo.os}}</span></a></h4> <br>
+                                <h4><a><strong>Processor: </strong><span>{{gameinfo.processor}}</span></a></h4> <br>
+                                <h4><a><strong>Graphics Card: </strong><span>{{gameinfo.gpu}}</span></a></h4> <br>
+                                <h4><a><strong>RAM: </strong><span>{{gameinfo.ram}} GB</span></a></h4> <br>
+                                <h4><a><strong>Storage Space: </strong><span>{{gameinfo.space}}</span></a></h4>
                             </div>
 
                         </div>
@@ -187,6 +187,7 @@
                                         <input type="text" name="username" placeholder="Display Name" required="">
                                         <input type="text" name="email" placeholder="Email" required="">
                                         <textarea name="review" placeholder="Write a Review..." required=""></textarea>
+                                        <input type="hidden" name="gid" value="{{gameinfo.gid}}">
                                         <input type="submit" value="Submit Review">
                                         <div class="clearfix"> </div>
                                     </form>
@@ -194,8 +195,9 @@
                             </div>
                             <div class="media-grids">
 
-                                {{> review}}
-                                {{> review}}
+                                {{#each reviews}}
+                                    {{> review}}
+                                {{/each}}
 
                             </div>
                         </div>

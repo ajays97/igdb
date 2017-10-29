@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55aea698-a202-486e-a810-b58448d324cd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/developers.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/genre.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/partials/review.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/game-info.hbs" afterPath="$PROJECT_DIR$/views/game-info.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.hbs" afterPath="$PROJECT_DIR$/views/login.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/footer.hbs" afterPath="$PROJECT_DIR$/views/partials/footer.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/header.hbs" afterPath="$PROJECT_DIR$/views/partials/header.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/nav-inactive.hbs" afterPath="$PROJECT_DIR$/views/partials/nav-inactive.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/nav.hbs" afterPath="$PROJECT_DIR$/views/partials/nav.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/search-item.hbs" afterPath="$PROJECT_DIR$/views/partials/search-item.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/review.hbs" afterPath="$PROJECT_DIR$/views/partials/review.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +22,18 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="70" column="63" lean-forward="false" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
+            <state relative-caret-position="248">
+              <caret line="139" column="22" lean-forward="true" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/search.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="108" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -40,15 +42,9 @@
       <file leaf-file-name="game-info.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/game-info.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="185" column="71" lean-forward="false" selection-start-line="185" selection-start-column="71" selection-end-line="185" selection-end-column="71" />
+            <state relative-caret-position="255">
+              <caret line="189" column="97" lean-forward="true" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
               <folding>
-                <element signature="e#8465#8471#0#HTML" expanded="true" />
-                <element signature="e#8471#8477#0#HTML" expanded="true" />
-                <element signature="e#8477#8483#0#HTML" expanded="true" />
-                <element signature="e#8483#8489#0#HTML" expanded="true" />
-                <element signature="e#8489#8495#0#HTML" expanded="true" />
-                <element signature="e#8495#8501#0#HTML" expanded="true" />
                 <element signature="e#8501#8507#0#HTML" expanded="true" />
                 <element signature="e#8507#8513#0#HTML" expanded="true" />
                 <element signature="e#8513#8519#0#HTML" expanded="true" />
@@ -58,6 +54,12 @@
                 <element signature="e#8537#8543#0#HTML" expanded="true" />
                 <element signature="e#8543#8549#0#HTML" expanded="true" />
                 <element signature="e#8549#8555#0#HTML" expanded="true" />
+                <element signature="e#8555#8561#0#HTML" expanded="true" />
+                <element signature="e#8561#8567#0#HTML" expanded="true" />
+                <element signature="e#8567#8573#0#HTML" expanded="true" />
+                <element signature="e#8573#8579#0#HTML" expanded="true" />
+                <element signature="e#8579#8585#0#HTML" expanded="true" />
+                <element signature="e#8585#8591#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +78,8 @@
       <file leaf-file-name="review.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/review.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="153">
+              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -136,9 +138,9 @@
         <option value="$PROJECT_DIR$/views/partials/nav-inactive.hbs" />
         <option value="$PROJECT_DIR$/views/partials/search-item.hbs" />
         <option value="$PROJECT_DIR$/views/partials/header.hbs" />
+        <option value="$PROJECT_DIR$/views/login.hbs" />
         <option value="$PROJECT_DIR$/views/partials/review.hbs" />
         <option value="$PROJECT_DIR$/views/game-info.hbs" />
-        <option value="$PROJECT_DIR$/views/login.hbs" />
         <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
@@ -185,12 +187,6 @@
               <item name="igdb" type="b2602c69:ProjectViewProjectNode" />
               <item name="igdb" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="igdb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="igdb" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="igdb" type="b2602c69:ProjectViewProjectNode" />
@@ -262,12 +258,12 @@
       <workItem from="1509157569938" duration="14001000" />
       <workItem from="1509179022369" duration="6312000" />
       <workItem from="1509190322255" duration="17637000" />
-      <workItem from="1509250953749" duration="9693000" />
+      <workItem from="1509250953749" duration="12019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74084000" />
+    <option name="totallyTimeSpent" value="76410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -360,11 +356,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/images/m3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/5.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -502,14 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/search.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/footer.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -550,14 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/search-item.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/user.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -587,25 +562,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="57" column="64" lean-forward="false" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/5.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/search-item.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/search.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="108" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/review.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="153">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/game-info.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="185" column="71" lean-forward="false" selection-start-line="185" selection-start-column="71" selection-end-line="185" selection-end-column="71" />
+        <state relative-caret-position="255">
+          <caret line="189" column="97" lean-forward="true" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
           <folding>
-            <element signature="e#8465#8471#0#HTML" expanded="true" />
-            <element signature="e#8471#8477#0#HTML" expanded="true" />
-            <element signature="e#8477#8483#0#HTML" expanded="true" />
-            <element signature="e#8483#8489#0#HTML" expanded="true" />
-            <element signature="e#8489#8495#0#HTML" expanded="true" />
-            <element signature="e#8495#8501#0#HTML" expanded="true" />
             <element signature="e#8501#8507#0#HTML" expanded="true" />
             <element signature="e#8507#8513#0#HTML" expanded="true" />
             <element signature="e#8513#8519#0#HTML" expanded="true" />
@@ -615,22 +613,20 @@
             <element signature="e#8537#8543#0#HTML" expanded="true" />
             <element signature="e#8543#8549#0#HTML" expanded="true" />
             <element signature="e#8549#8555#0#HTML" expanded="true" />
+            <element signature="e#8555#8561#0#HTML" expanded="true" />
+            <element signature="e#8561#8567#0#HTML" expanded="true" />
+            <element signature="e#8567#8573#0#HTML" expanded="true" />
+            <element signature="e#8573#8579#0#HTML" expanded="true" />
+            <element signature="e#8579#8585#0#HTML" expanded="true" />
+            <element signature="e#8585#8591#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="57" column="64" lean-forward="false" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="70" column="63" lean-forward="false" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
+        <state relative-caret-position="248">
+          <caret line="139" column="22" lean-forward="true" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
           <folding />
         </state>
       </provider>
