@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('express-handlebars');
 const Handlebars = require('handlebars');
 const bodyParser = require('body-parser');
+const url = require('url');
 const _ = require('lodash');
 var conn = require('./dbconnect');
 const cookieParser = require('cookie-parser');
@@ -22,7 +23,6 @@ app.use(cookieParser());
 var options = require('./session');
 
 var sessionStore = new MySQLStore(options);
-
 
 app.use(session({
     secret: 'igdb2017',
@@ -68,6 +68,10 @@ Handlebars.registerHelper('getDate', function (dateString) {
     return new Handlebars.SafeString(dateString.toString().substring(4, 15));
 });
 
+Handlebars.registerHelper('getRoute', function (passedString) {
+    return new Handlebars.SafeString(passedString.substring(passedString.indexOf('/', 8)+1).replace('/', '_'));
+});
+
 app.get('/', function (req, res) {
     // console.log(req.user);
     // console.log(req.isAuthenticated());
@@ -82,7 +86,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/login', function (req, res) {
-    res.render('login');
+    res.render('login', {routeBack: req.query.routeBack});
 });
 
 app.get('/gameinfo/:gid', function (req, res) {
@@ -99,15 +103,37 @@ app.get('/review', authenticationMiddleware(), function (req, res) {
 app.get('/logout', function (req, res) {
     req.logout();
     req.session.destroy();
-    res.redirect('/');
+    res.redirect('back');
 });
 
-app.post('/search', function (req, res) {
-    const sql = "SELECT * FROM games_master where MATCH(title) AGAINST('" + req.body.search + "');";
+app.get('/search', function (req, res) {
+    const sql = "SELECT * FROM games_master where MATCH(title) AGAINST('" + req.query.q + "');";
     conn.query(sql, function (err, results){
         if (err) throw err;
-        res.render('search', {games: results, search: req.body.search});
+        res.render('search', {games: results, search: req.query.q});
     });
+});
+
+app.get('/genre/:genre', function (req, res) {
+    const sql = "SELECT * FROM games_master where MATCH(genre) AGAINST('" + req.params.genre + "');";
+    conn.query(sql, function (err, results){
+        if (err) throw err;
+        res.render('genre', {games: results, search: req.params.genre});
+    });
+});
+
+app.get('/developers/:developers', function (req, res) {
+    const sql = "SELECT * FROM games_master where MATCH(developers) AGAINST('" + req.params.developers+ "');";
+    conn.query(sql, function (err, results){
+        if (err) throw err;
+        res.render('developers', {games: results, search: req.params.developers, dev: results[0].developers});
+    });
+});
+
+app.post('/review', authenticationMiddleware(), function (req, res) {
+    var review = {username: req.body.username, email: req.body.email, review: req.body.review, created_at: new Date().getTime()};
+    console.log(review);
+    res.redirect(req.header('referer'));
 });
 
 app.post('/subscribe', function (req, res) {
@@ -118,11 +144,10 @@ app.post('/subscribe', function (req, res) {
     });
 });
 
-app.post('/login', passport.authenticate('local', {
-    successRedirect: '/review',
+app.post('/login/:routeBack', passport.authenticate('local', {
     failureRedirect: '/login'
 }), function (req, res) {
-    console.log(req.user);
+    res.redirect('/'+req.params.routeBack.replace('_', '/'));
 });
 
 app.post('/signup', function (req, res) {
@@ -149,7 +174,12 @@ function authenticationMiddleware () {
         console.log('req.session.passport.user: ' + JSON.stringify(req.session.passport));
 
         if (req.isAuthenticated()) return next();
-        res.redirect('/login');
+        res.redirect(url.format({
+            pathname: '/login',
+            query: {
+                "routeBack": req.header('referer')
+            }
+        }));
     }
 }
 

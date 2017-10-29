@@ -163,7 +163,7 @@
                                 <h3><a><strong>Game Info:-</strong></a></h3>
                                 <hr>
                                 <h4><a><strong>Title: </strong><span>{{title}}</span></a></h4> <br>
-                                <h4><a><strong>Description: </strong><span>{{description}}</span></a></h4> <br>
+                                <h4><a><strong>Description:-<br></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{description}}</span></a></h4> <br>
                                 <h4><a><strong>Developed By: </strong><span>{{developers}}</span></a></h4> <br>
                                 <h4><a><strong>Release Date: </strong><span>{{getDate release_date}}</span></a></h4> <br>
                                 <h4><a><strong>IGDb Rating: </strong><span>{{rating}}/5</span></a></h4>
@@ -183,52 +183,19 @@
                             <div class="all-comments-info">
                                 <a href="#">Reviews</a>
                                 <div class="agile-info-wthree-box">
-                                    <form>
-                                        <input type="text" placeholder="Name" required="">
-                                        <input type="text" placeholder="Email" required="">
-                                        <textarea placeholder="Write a Review" required=""></textarea>
+                                    <form action="/review" method="post">
+                                        <input type="text" name="username" placeholder="Display Name" required="">
+                                        <input type="text" name="email" placeholder="Email" required="">
+                                        <textarea name="review" placeholder="Write a Review..." required=""></textarea>
                                         <input type="submit" value="Submit Review">
                                         <div class="clearfix"> </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="media-grids">
-                                <div class="media">
-                                    <h5>TOM BROWN</h5>
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img src="images/user.jpg" title="One movies" alt=" " />
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                                        <span>View all posts by :<a href="#"> Admin </a></span>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <h5>MARK JOHNSON</h5>
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img src="images/user.jpg" title="One movies" alt=" " />
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                                        <span>View all posts by :<a href="#"> Admin </a></span>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <h5>STEVEN SMITH</h5>
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img src="images/user.jpg" title="One movies" alt=" " />
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                                        <span>View all posts by :<a href="#"> Admin </a></span>
-                                    </div>
-                                </div>
+
+                                {{> review}}
+                                {{> review}}
 
                             </div>
                         </div>

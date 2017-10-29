@@ -5,7 +5,7 @@
 <div class="container" style="margin-bottom: 1em">
     <div class="container col-md-6">
         <div class="w3l-movie-gride-agile">
-            <a href="/gameinfo/{{gid}}" class="hvr-shutter-out-horizontal"><img src="{{image_url}}" title="album-name" class="img-responsive" alt=" " />
+            <a href="/gameinfo/{{gid}}" class="hvr-shutter-out-horizontal"><img src="{{image_url}}" title="album-name" class="img-responsive" alt="{{image_url}}" />
                 <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
             </a>
         </div>
@@ -14,6 +14,7 @@
         <h3><a><strong>Game Info:-</strong></a></h3>
         <hr>
         <h4><a><strong>Developed By: </strong><span>{{developers}}</span></a></h4> <br>
+        <h4><a><strong>Genre: </strong><span>{{genre}}</span></a></h4> <br>
         <h4><a><strong>IGDb Rating: </strong><span>{{rating}}/5</span></a></h4> <br>
         <h4><a><strong>Release Date: </strong><span>{{getDate release_date}}/5</span></a></h4> <br>
         <h4><a href="/gameinfo/{{id}}">Visit IGDb Page</a></h4>
