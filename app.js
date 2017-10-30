@@ -44,11 +44,10 @@ passport.use(new LocalStrategy({
     }, function(email, password, done) {
         const sql = "SELECT username, passwrd from users WHERE email = '" + email + "';";
         conn.query(sql, function (err, results, fields) {
-
             if (err) {done(err)}
 
             if (results.length === 0) {
-                done(null, false);
+                return done(null, false);
             }
 
             if (results[0].passwrd === password)
@@ -70,7 +69,10 @@ Handlebars.registerHelper('getDate', function (dateString) {
 });
 
 Handlebars.registerHelper('getRoute', function (passedString) {
-    return new Handlebars.SafeString(passedString.substring(passedString.indexOf('/', 8)+1).replace('/', '_'));
+    if (passedString)
+        return new Handlebars.SafeString(passedString.substring(passedString.indexOf('/', 8)+1).replace('/', '_'));
+    else
+        return;
 });
 
 app.get('/', function (req, res) {
@@ -150,6 +152,13 @@ app.post('/login/:routeBack', passport.authenticate('local', {
     failureRedirect: '/login'
 }), function (req, res) {
     res.redirect('/'+req.params.routeBack.replace('_', '/'));
+});
+
+app.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login'
+}), function (req, res) {
+    // res.redirect('/'+req.params.routeBack.replace('_', '/'));
 });
 
 app.post('/signup', function (req, res) {

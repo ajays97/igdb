@@ -5,8 +5,8 @@
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-    function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);-->
+    <!--function hideURLbar(){ window.scrollTo(0,1); } </script>-->
     <!-- //for-mobile-apps -->
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -14,6 +14,10 @@
     <link href="/css/single.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="/css/contactstyle.css" type="text/css" media="all" />
     <link rel="stylesheet" href="/css/faqstyle.css" type="text/css" media="all" />
+    <!-- banner-slider -->
+    <link href="css/jquery.slidey.min.css" rel="stylesheet">
+    <!-- pop-up -->
+    <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
     <!-- news-css -->
     <link rel="stylesheet" href="/news-css/news.css" type="text/css" media="all" />
     <!-- //news-css -->
@@ -41,6 +45,14 @@
     <!-- start-smoth-scrolling -->
     <link href="/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
     <script src="/js/owl.carousel.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $("#owl-demo").owlCarousel({
@@ -65,19 +77,19 @@
 
 <body>
     <!-- header -->
-    {{> header}}
+        {{> header}}
     <!-- //header -->
 
     <!-- bootstrap-pop-up -->
-    {{> bootstrap-popup}}
+        {{> bootstrap-popup}}
     <!-- //bootstrap-pop-up -->
 
     <!-- nav -->
-    {{> nav-inactive}}
+        {{> nav-inactive}}
     <!-- //nav -->
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
             $(".dropdown").hover(
@@ -134,10 +146,10 @@
                                             <div class="fb-share-button" data-href="https://www.facebook.com/geeksnome" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fw3layouts&amp;src=sdkpreparse">Share</a></div>
                                         </li>
                                         <li class="news-twitter">
-                                            <a href="https://twitter.com/geeksnome" class="twitter-follow-button" data-show-count="false">Follow @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                            <a href="https://twitter.com/geeksnome" class="twitter-follow-button" data-show-count="false">Follow @IGDb</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                                         </li>
                                         <li>
-                                            <a href="https://twitter.com/intent/tweet?screen_name=geeksnome" class="twitter-mention-button" data-show-count="false">Tweet to @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                            <a href="https://twitter.com/intent/tweet?screen_name=geeksnome" class="twitter-mention-button" data-show-count="false">Tweet to @IGDb</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                                         </li>
                                         <li>
                                             <!-- Place this tag where you want the +1 button to render. -->
@@ -165,7 +177,7 @@
                                 <h4><a><strong>Title: </strong><span>{{gameinfo.title}}</span></a></h4> <br>
                                 <h4><a><strong>Description:-<br></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{gameinfo.description}}</span></a></h4> <br>
                                 <h4><a><strong>Developed By: </strong><span>{{gameinfo.developers}}</span></a></h4> <br>
-                                <h4><a><strong>Release Date: </strong><span>{{getYear gameinfo.release_date}}</span></a></h4> <br>
+                                <h4><a><strong>Release Date: </strong><span>{{getDate gameinfo.release_date}}</span></a></h4> <br>
                                 <h4><a><strong>IGDb Rating: </strong><span>{{gameinfo.rating}}/5</span></a></h4>
                                 <hr>
                                 <h3><a><strong>Minimum System Requirements:-</strong></a></h3>
